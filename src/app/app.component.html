@@ -1,0 +1,13 @@
+<div *ngIf="todos$ | async as todos">You have {{ todos.length }} todos!</div>
+
+<ul>
+  <li *ngFor="let todo of todos$ | async">
+    {{ todo.name }}
+  </li>
+</ul>
+
+<app-todo
+  *ngFor="let todo of todos$ | async"
+  [todo]="todo"
+  (done)="catchDoneEvent($event)"
+></app-todo>
