@@ -6,6 +6,8 @@ import { HttpClient } from '@angular/common/http';
 @Injectable()
 export class TodoService {
   private actionUrl = 'https://tt-todos.azurewebsites.net/todos';
+  // Liefert:
+  // [{"id":1,"name":"Wäsche waschen","done":false},{"id":2,"name":"Fenster putzen","done":true}]
 
   constructor(private readonly httpClient: HttpClient) {}
 
